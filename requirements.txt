@@ -3,3 +3,4 @@ python-dotenv
 tabulate
 python-dotenv
 flask           # ← keep_alive用に必要
+psycopg2-binary
