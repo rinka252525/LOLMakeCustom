@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+import subprocess
 import json
 import os
 from itertools import permutations
@@ -151,6 +152,14 @@ async def on_guild_join(guild):
 4 !win で勝敗記録
 """)
             break
+
+@bot.command()
+async def update(ctx):
+    try:
+        output = subprocess.check_output(['git', 'pull'], stderr=subprocess.STDOUT)
+        await ctx.send(f"✅ コードをアップデートしました:\n```\n{output.decode()}```")
+    except subprocess.CalledProcessError as e:
+        await ctx.send(f"❌ アップデートに失敗しました:\n```\n{e.output.decode()}```")
 
 @bot.command()
 async def hello(ctx):
