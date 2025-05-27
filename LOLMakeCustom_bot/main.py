@@ -655,10 +655,10 @@ async def reset(ctx):
 
 
 
-@bot.command(name="help_bb")
+@bot.command(name="help_mc")
 async def help_command(ctx):
     await ctx.send("""
-🐉 BaronBrainコマンド一覧 🐉
+📘 LOLMakeCustomコマンド一覧
 
 !ability @user 10 10 10 10 10 - 能力値登録
 !delete_ability @user - 能力値削除
@@ -676,6 +676,74 @@ async def help_command(ctx):
 !ranking - 各レーンの能力値ランキング
 !show_custom @user - 各個人のカスタム勝率
 
+!help_mc_detail - 詳細説明
+""")
+
+@bot.command(name="help_mc_detail")
+async def help_command(ctx):
+    await ctx.send("""
+📘LOLMakeCustomコマンド詳細説明
+
+【🧠 能力値関連】
+'!ability @user 10 10 10 10 10'
+→ @user に top, jg, mid, adc, sup の順で能力値を登録（0以上)
+
+'!delete_ability @user'
+→ 指定ユーザーの能力値を削除
+
+'!show_ability'
+→ 登録済みの全ユーザーの能力値と合計を表示（合計順）
+
+【🎮 参加関連】
+'!join @user top jg'
+→ 希望レーンを2つまで登録（例：topとjg）
+
+'!join @user fill fill'
+→レーンがどこでも良い場合はfillを利用してください
+
+'!leave @user'
+→ 参加リストから@userを削除
+
+'!participants_list!'
+→ 現在の参加メンバー一覧と希望レーンを表示
+
+'!reset'
+→ 参加者を全てリセット
+
+【⚔️ チーム編成関連】
+'!make_teams 20 50'
+→ 希望レーンを考慮して10人を自動で5v5に分ける
+　- 各レーン対面差が20以内、チーム合計差が50以内を目安
+　- 条件を満たせない場合も、なるべくバランスよく編成（警告あり）
+
+'!swap @user1 @user2'
+→ レーン・チームを入れ替え
+　- 直前の !make_teams の編成が必要
+
+【🏆 勝敗報告と成績】
+'!win A または !win B'
+→ 勝利チームのレーン能力値を+、敗者は−で調整
+　- 5戦目までは ±10、6戦目以降は ±2
+
+【📊 各種統計】
+'!ranking'
+→ 各レーンでの能力値上位ランキングを表示
+
+'!show_custom @user'
+→ 指定ユーザーのカスタム勝率、試合数、各レーンの戦績を表示
+
+【ℹ️ その他】
+'!help_mc'
+→ コマンド一覧（簡易）
+
+'!help_mc_detail'
+→ この詳細説明を再表示
+
+【カスタムチーム分けの流れ】
+1 !ability で能力値を登録
+2 !join で希望レーン・参加登録
+3 !make_teams でチーム分け
+4 !win で勝敗記録
 """)
 
 bot.run(BOT_TOKEN)
