@@ -26,23 +26,7 @@ history_file = 'history.json'
 current_teams = {}
 last_teams = {"team_a": {}, "team_b": {}}
 
-# Ability data structure example:
-# {
-#   "guild_id": {
-#       "user_id": {
-#           "top": 100,
-#           "jg": 80,
-#           "mid": 90,
-#           "adc": 85,
-#           "sup": 95,
-#           "matches": {"top": 3, "jg": 0, ...},
-#           "custom_history": [
-#               {"lane": "top", "result": "win", "change": 10},
-#               {"lane": "mid", "result": "lose", "change": -10},
-#           ]
-#       }
-#   }
-# }
+
 lanes = ['top', 'jg', 'mid', 'adc', 'sup']
 # 環境変数の読み込み
 load_dotenv()
