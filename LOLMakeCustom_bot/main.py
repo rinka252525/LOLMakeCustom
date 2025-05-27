@@ -8,6 +8,9 @@ import re
 import random
 from dotenv import load_dotenv
 from itertools import combinations, permutations
+from keep_alive import keep_alive
+
+
 
 intents = discord.Intents.default()
 intents = discord.Intents.all()
@@ -30,6 +33,8 @@ lanes = ['top', 'jg', 'mid', 'adc', 'sup']
 # 環境変数の読み込み
 load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN")  # 追加
+
+keep_alive()  # Flask サーバーを起動
 
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix="!", intents=intents)
