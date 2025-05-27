@@ -9,8 +9,6 @@ import random
 from dotenv import load_dotenv
 from itertools import combinations, permutations
 from keep_alive import keep_alive
-from db import create_tables, set_ability, get_all_abilities
-
 
 intents = discord.Intents.default()
 intents = discord.Intents.all()
@@ -38,41 +36,6 @@ keep_alive()  # Flask サーバーを起動
 
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix="!", intents=intents)
-
-create_tables()  # 起動時にテーブル作成
-# ユーザー登録（例）
-set_ability("123456789", 100, 80, 90, 70, 60)
-# 全データ取得
-print(get_all_abilities())
-def create_tables():
-    cursor.execute("""
-        CREATE TABLE IF NOT EXISTS abilities (
-            user_id TEXT PRIMARY KEY,
-            top INT, jg INT, mid INT, adc INT, sup INT
-        );
-    """)
-    cursor.execute("""
-        CREATE TABLE IF NOT EXISTS last_teams (
-            id SERIAL PRIMARY KEY,
-            team_name TEXT,
-            user_id TEXT,
-            lane TEXT,
-            ability INT
-        );
-    """)
-    cursor.execute("""
-        CREATE TABLE IF NOT EXISTS history (
-            user_id TEXT PRIMARY KEY,
-            wins INT DEFAULT 0,
-            losses INT DEFAULT 0,
-            top_wins INT DEFAULT 0, top_losses INT DEFAULT 0,
-            jg_wins INT DEFAULT 0, jg_losses INT DEFAULT 0,
-            mid_wins INT DEFAULT 0, mid_losses INT DEFAULT 0,
-            adc_wins INT DEFAULT 0, adc_losses INT DEFAULT 0,
-            sup_wins INT DEFAULT 0, sup_losses INT DEFAULT 0
-        );
-    """)
-    conn.commit()
 
 # ファイル読み込み/保存用関数
 def load_data(file):
