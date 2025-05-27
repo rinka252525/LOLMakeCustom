@@ -10,8 +10,6 @@ from dotenv import load_dotenv
 from itertools import combinations, permutations
 from keep_alive import keep_alive
 
-
-
 intents = discord.Intents.default()
 intents = discord.Intents.all()
 intents.members = True
@@ -28,11 +26,11 @@ history_file = 'history.json'
 current_teams = {}
 last_teams = {"team_a": {}, "team_b": {}}
 
-
-lanes = ['top', 'jg', 'mid', 'adc', 'sup']
 # 環境変数の読み込み
 load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN")  # 追加
+if not TOKEN:
+    raise ValueError("BOT_TOKEN が .env に定義されていません。")
 
 keep_alive()  # Flask サーバーを起動
 
