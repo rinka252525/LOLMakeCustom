@@ -37,9 +37,27 @@
 
 ⑤ 必要ライブラリをインストール（ローカルの場合）
 
-pip install -r requirements.txt
 ⑥ main.py を実行すればBotが起動！
+　pip install -r requirements.txt
 
+ ⚙️ セットアップ手順（Replit向け）
+--------------------------------------------------
+🧾 事前準備
+✅ Replit アカウントを作成・ログイン
+https://replit.com にアクセスしてアカウントを作成
+
+🗂 プロジェクトのインポート
+① このリポジトリを GitHub から Fork する
+GitHub のリポジトリをフォーク（またはZIPを展開してGitHubにアップロード）
+
+② Replit で新しいプロジェクトを作成
+「Create Repl」をクリック
+
+Python を選択
+
+「Import from GitHub」タブで、自分のリポジトリURLを入力
+
+「Create Repl」をクリック
 
 
 📡 常時起動について（オプション）
