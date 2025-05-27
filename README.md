@@ -84,12 +84,16 @@ Q. Botが反応しません！
 Q. JSONファイルが空です！
 → 最初は空でOKです。コマンドを使えば自動的にデータが追加されます。
 
+Q. 導入方法がよく分かりません！
+→ より一層詳しい説明をnoteに更新していく予定です。https://note.com/owsc
+
 📬 サポート
 --------------------------------------------------
 不具合報告・カスタマイズ依頼は以下までご連絡ください。
 📸 X（旧Twitter）: @deco39deco or @owsc_39
 discord：@harapeko_o
 https://discord.gg/Vjn4Gxys
+note：https://note.com/owsc
 
 --------------------------------------------------
 Copyright © 2025 deco
