@@ -1,7 +1,7 @@
 # LOLMakeCustom
 
 ==================================================
-       【TeemoMate】Discord Bot for LoL
+       【LOLMakeCustom】Discord Bot for LoL
         自動チーム分け＆能力成長Bot
 ==================================================
 
@@ -10,7 +10,7 @@
 - main.py                 ← Botのメインスクリプト
 - keep_alive.py           ← Replit用（Renderでは不要）
 - data/
-   ├─ players.json        ← プレイヤーの能力値保存
+   ├─ abilities.json        ← プレイヤーの能力値保存
    ├─ history.json        ← 試合結果・戦績の保存
    └─ last_teams.json     ← 直近のチーム構成保存
 - requirements.txt        ← 使用ライブラリ一覧
