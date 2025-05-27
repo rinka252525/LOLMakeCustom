@@ -8,6 +8,8 @@ import re
 import random
 from dotenv import load_dotenv
 from itertools import combinations, permutations
+from keep_alive import keep_alive
+
 
 intents = discord.Intents.default()
 intents = discord.Intents.all()
@@ -30,6 +32,8 @@ load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN")  # 追加
 if not TOKEN:
     raise ValueError("BOT_TOKEN が .env に定義されていません。")
+
+keep_alive()  # Flask サーバーを起動
 
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix="!", intents=intents)
