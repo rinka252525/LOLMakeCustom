@@ -674,7 +674,31 @@ async def show_custom(ctx, member: discord.Member = None):
 # bot.run(...) は既に実行中のコードで保持
 # 他のコマンドとの統合が必要な場合はお知らせください。
 
+@bot.command()
+async def history(ctx):
+    server_data = get_server_data(ctx.guild.id)
+    if not server_data:
+        await ctx.send("データが存在しません。")
+        return
 
+    lanes = ['top', 'jg', 'mid', 'adc', 'sup']
+    rankings = {lane: [] for lane in lanes}
+
+    for uid, stats in server_data.items():
+        member = ctx.guild.get_member(int(uid))
+        if not member:
+            continue
+        for lane in lanes:
+            rankings[lane].append((member.display_name, stats.get(lane, 0)))
+
+    msg = "**🔝 レーン別ランキング**\n"
+    for lane in lanes:
+        msg += f"\n**{lane.upper()}**\n"
+        sorted_ranks = sorted(rankings[lane], key=lambda x: x[1], reverse=True)
+        for i, (name, score) in enumerate(sorted_ranks, 1):
+            msg += f"{i}. {name} - {score}\n"
+
+    await ctx.send(msg)
 @bot.command()
 async def ranking(ctx):
     server_data = get_server_data(ctx.guild.id)
