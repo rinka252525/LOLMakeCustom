@@ -9,11 +9,11 @@
 --------------------------------------------------
 - README.txt              ← この説明書
 - .gitignore              ← データ保管用スクリプト
-- keep_alive.py           ← Replit用（Renderでは不要）
 - requirements.txt        ← 使用ライブラリ一覧
 - LOLMakeCustom_bot/
--    ├─main.py            ← メインスクリプト
--    ├─data/
+    ├─main.py            ← メインスクリプト
+    ├─keep_alive.py      ← Replit用（Renderでは不要）
+    └─data/
         ├─ abilities.json      ← プレイヤーの能力値保存
         ├─ history.json        ← 試合結果・戦績の保存
         └─ last_teams.json     ← 直近のチーム構成保存
