@@ -30,7 +30,7 @@ last_teams = {"team_a": {}, "team_b": {}}
 # 環境変数の読み込み
 load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN")  # 追加
-if not TOKEN:
+if not BOT_TOKEN:
     raise ValueError("BOT_TOKEN が .env に定義されていません。")
 
 keep_alive()  # Flask サーバーを起動
