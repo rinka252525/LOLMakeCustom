@@ -20,7 +20,6 @@ lanes = ['top', 'jg', 'mid', 'adc', 'sup']
 
 ability_file = 'abilities.json'
 team_file = 'last_teams.json'
-match_history_file = 'match_history.json'
 participants = {}  # {guild_id: {user_id: [lane1, lane2]}} または ['fill']
 history_file = 'history.json'
 current_teams = {}
